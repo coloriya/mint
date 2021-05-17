@@ -1,51 +1,51 @@
 {
-	"colours": [
+	"colors": [
 		{
 			"title": "White",
 			"description": "",
-			"colour": "ffffff",
+			"color": "ffffff",
 			"name": ""
 		},
 		{
 			"title": "Black",
 			"description": "",
-			"colour": "000000",
+			"color": "000000",
 			"name": ""
 		},
 		{
 			"title": "Red",
 			"description": "",
-			"colour": "ff0000",
+			"color": "ff0000",
 			"name": ""
 		},
 		{
 			"title": "Green",
 			"description": "",
-			"colour": "00ff00",
+			"color": "00ff00",
 			"name": ""
 		},
 		{
 			"title": "Blue",
 			"description": "",
-			"colour": "0000ff",
+			"color": "0000ff",
 			"name": ""
 		},
 		{
 			"title": "Cyan",
 			"description": "",
-			"colour": "00ffff",
+			"color": "00ffff",
 			"name": ""
 		},
 		{
 			"title": "Fuchsia",
 			"description": "",
-			"colour": "ff00ff",
+			"color": "ff00ff",
 			"name": ""
 		},
 		{
 			"title": "Yellow",
 			"description": "",
-			"colour": "ffff00",
+			"color": "ffff00",
 			"name": ""
 		}
 	]
