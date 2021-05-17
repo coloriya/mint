@@ -7,12 +7,15 @@ const MintPalette = require("./palette");
 const MintTemplate = require("./template");
 
 function MintApp () {
+	this.preferences = JSON.parse(fs.readFileSync("preferences.json"));
+	this.paths = this.preferences.paths;
 	this.colors = [];
 	this.palettes = [];
 }
 
 MintApp.prototype.helloWorld = function () {
-	console.log("MintApp says hello.");
+	// console.log("MintApp says hello.");
+	console.log(this.paths);
 }
 
 

@@ -3,49 +3,49 @@
 		{
 			"title": "White",
 			"description": "",
-			"color": "ffffff",
+			"hex": "ffffff",
 			"name": ""
 		},
 		{
 			"title": "Black",
 			"description": "",
-			"color": "000000",
+			"hex": "000000",
 			"name": ""
 		},
 		{
 			"title": "Red",
 			"description": "",
-			"color": "ff0000",
+			"hex": "ff0000",
 			"name": ""
 		},
 		{
 			"title": "Green",
 			"description": "",
-			"color": "00ff00",
+			"hex": "00ff00",
 			"name": ""
 		},
 		{
 			"title": "Blue",
 			"description": "",
-			"color": "0000ff",
+			"hex": "0000ff",
 			"name": ""
 		},
 		{
 			"title": "Cyan",
 			"description": "",
-			"color": "00ffff",
+			"hex": "00ffff",
 			"name": ""
 		},
 		{
 			"title": "Fuchsia",
 			"description": "",
-			"color": "ff00ff",
+			"hex": "ff00ff",
 			"name": ""
 		},
 		{
 			"title": "Yellow",
 			"description": "",
-			"color": "ffff00",
+			"hex": "ffff00",
 			"name": ""
 		}
 	]
