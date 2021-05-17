@@ -1,0 +1,26 @@
+{
+	"pages": [
+		{
+			"title": "Home",
+			"path": "index",
+			"out": "index.html"
+		},
+		{
+			"title": "About",
+			"path": "about"
+		},
+		{
+			"title": "Terms",
+			"path": "terms"
+		},
+		{
+			"title": "Privacy",
+			"path": "privacy"
+		},
+		{
+			"title": "404",
+			"path": "404",
+			"out": "404.html"
+		}
+	]
+}

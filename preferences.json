@@ -1,5 +1,6 @@
 {
 	"paths": {
+		"pages": "pages",
 		"templates": "src/pug",
 		"colors": "colors",
 		"output": "docs"

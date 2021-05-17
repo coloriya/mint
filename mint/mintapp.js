@@ -4,6 +4,7 @@ const path = require("path");
 
 const MintColor = require("./color");
 const MintPalette = require("./palette");
+const MintPage = require("./page");
 const MintTemplate = require("./template");
 
 function MintApp () {
