@@ -1,0 +1,17 @@
+{
+	"paths": {
+		"templates": "src/pug",
+		"colours": "colours",
+		"output": "docs"
+	},
+
+	"meta": {
+		"app": {
+			"name": "ColourMint"
+		},
+		"author": {
+			"name": "Ankur Seth",
+			"github": "iaseth"
+		}
+	}
+}
