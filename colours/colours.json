@@ -1,0 +1,52 @@
+{
+	"colours": [
+		{
+			"title": "White",
+			"description": "",
+			"colour": "ffffff",
+			"name": ""
+		},
+		{
+			"title": "Black",
+			"description": "",
+			"colour": "000000",
+			"name": ""
+		},
+		{
+			"title": "Red",
+			"description": "",
+			"colour": "ff0000",
+			"name": ""
+		},
+		{
+			"title": "Green",
+			"description": "",
+			"colour": "00ff00",
+			"name": ""
+		},
+		{
+			"title": "Blue",
+			"description": "",
+			"colour": "0000ff",
+			"name": ""
+		},
+		{
+			"title": "Cyan",
+			"description": "",
+			"colour": "00ffff",
+			"name": ""
+		},
+		{
+			"title": "Fuchsia",
+			"description": "",
+			"colour": "ff00ff",
+			"name": ""
+		},
+		{
+			"title": "Yellow",
+			"description": "",
+			"colour": "ffff00",
+			"name": ""
+		}
+	]
+}
