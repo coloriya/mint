@@ -48,7 +48,9 @@ MintPalette.prototype.getOutputHtmlPath = function () {
 
 
 MintPalette.prototype.printDetails = function () {
-	//
+	for (let rendition of this.renditions) {
+		console.log(`\t${rendition.getNIndex()}. ${rendition.getPresentableS()}`);
+	}
 }
 
 
