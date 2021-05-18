@@ -1,4 +1,7 @@
 
+const fs = require("fs");
+const path = require("path");
+
 
 
 function MintColor (app, json) {
@@ -9,10 +12,27 @@ function MintColor (app, json) {
 	this.hex = json.hex;
 	this.title = json.title;
 	this.name = json.name ? json.name : json.title.toLowerCase();
+	this.filename = this.name + ".pug";
 }
 
 const MintBaseClass = require("./baseclass");
 MintColor.prototype = new MintBaseClass(MintColor);
+
+
+
+MintColor.prototype.getInputPugPath = function () {
+	if (!this.inputPugPath) {
+		this.inputPugPath = path.join(this.app.paths.colors, "colors", this.filename);
+	}
+	return this.inputPugPath;
+}
+
+MintColor.prototype.getOutputHtmlPath = function () {
+	if (!this.outputHtmlPath) {
+		this.outputHtmlPath = path.join(this.app.paths.output, "color", this.getName(), "index.html");
+	}
+	return this.outputHtmlPath;
+}
 
 
 
@@ -21,7 +41,7 @@ MintColor.prototype.getHexCode = function () {
 }
 
 MintColor.prototype.getPresentableS = function () {
-	return `${this.getTitle()} (${this.getName()}) ${this.getHexCode()}`;
+	return `${this.getTitle()} ${this.getHexCode()} (${this.getInputPugPath()}) --> (${this.getOutputHtmlPath()})`;
 }
 
 

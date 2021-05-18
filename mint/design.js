@@ -13,11 +13,26 @@ function MintDesign (app, json) {
 
 	this.name = json.name;
 	this.path = json.path ? json.path : (json.name + ".pug");
-	this.fullPath = path.join(this.app.paths.designs, this.path);
 }
 
 const MintBaseClass = require("./baseclass");
 MintDesign.prototype = new MintBaseClass(MintDesign);
+
+
+
+MintDesign.prototype.getInputPugPath = function () {
+	if (!this.inputPugPath) {
+		this.inputPugPath = path.join(this.app.paths.designs, this.path);
+	}
+	return this.inputPugPath;
+}
+
+MintDesign.prototype.getOutputHtmlPath = function () {
+	if (!this.outputHtmlPath) {
+		this.outputHtmlPath = path.join(this.app.paths.output, "design", this.getName(), "index.html");
+	}
+	return this.outputHtmlPath;
+}
 
 
 
@@ -27,10 +42,6 @@ MintDesign.prototype.getPath = function () {
 
 MintDesign.prototype.getFullPath = function () {
 	return this.fullPath;
-}
-
-MintDesign.prototype.getPresentableS = function () {
-	return `${this.getName()} (${this.getFullPath()})`;
 }
 
 

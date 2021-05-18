@@ -33,4 +33,10 @@ MintBaseClass.prototype.getDescription = function () {
 
 
 
+MintBaseClass.prototype.getPresentableS = function () {
+	return `${this.getInputPugPath()} ---> ${this.getOutputHtmlPath()}`;
+}
+
+
+
 module.exports = MintBaseClass;

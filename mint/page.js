@@ -15,13 +15,6 @@ function MintPage (app, json) {
 	this.name = mintutils.sanitizeName(json.name);
 
 	this.filename = json.name + ".pug";
-	this.filepath = path.join(this.app.paths.pages, this.filename);
-
-	if (this.json.out) {
-		this.htmlpath = path.join(this.app.paths.output, this.json.out);
-	} else {
-		this.htmlpath = path.join(this.app.paths.output, this.name, "index.html");
-	}
 }
 
 const MintBaseClass = require("./baseclass");
@@ -29,8 +22,22 @@ MintPage.prototype = new MintBaseClass(MintPage);
 
 
 
-MintPage.prototype.getPresentableS = function () {
-	return `${this.filepath} ---> ${this.htmlpath}`;
+MintPage.prototype.getInputPugPath = function () {
+	if (!this.inputPugPath) {
+		this.inputPugPath = path.join(this.app.paths.pages, this.filename);
+	}
+	return this.inputPugPath;
+}
+
+MintPage.prototype.getOutputHtmlPath = function () {
+	if (!this.outputHtmlPath) {
+		if (this.json.out) {
+			this.outputHtmlPath = path.join(this.app.paths.output, this.json.out);
+		} else {
+			this.outputHtmlPath = path.join(this.app.paths.output, this.name, "index.html");
+		}
+	}
+	return this.outputHtmlPath;
 }
 
 
