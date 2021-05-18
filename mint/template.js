@@ -16,11 +16,10 @@ function MintTemplate (app, json) {
 	this.fullPath = path.join(this.app.paths.templates, this.path);
 }
 
+const MintBaseClass = require("./baseclass");
+MintTemplate.prototype = new MintBaseClass(MintTemplate);
 
 
-MintTemplate.prototype.getName = function () {
-	return this.name;
-}
 
 MintTemplate.prototype.getPath = function () {
 	return this.path;
@@ -28,14 +27,6 @@ MintTemplate.prototype.getPath = function () {
 
 MintTemplate.prototype.getFullPath = function () {
 	return this.fullPath;
-}
-
-MintTemplate.prototype.getIndex = function () {
-	return this.index;
-}
-
-MintTemplate.prototype.getNIndex = function () {
-	return this.index + 1;
 }
 
 MintTemplate.prototype.getPresentableS = function () {

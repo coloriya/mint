@@ -22,30 +22,10 @@ function MintPage (app, json) {
 	}
 }
 
+const MintBaseClass = require("./baseclass");
+MintPage.prototype = new MintBaseClass(MintPage);
 
 
-MintPage.prototype.getTitle = function () {
-	return this.title;
-}
-
-MintPage.prototype.getName = function () {
-	return this.name;
-}
-
-MintPage.prototype.getIndex = function () {
-	return this.index;
-}
-
-MintPage.prototype.getNIndex = function () {
-	return this.index + 1;
-}
-
-MintPage.prototype.getDescription = function () {
-	if (this.json.description) {
-		return this.json.description;
-	}
-	return "No description!";
-}
 
 MintPage.prototype.getPresentableS = function () {
 	return `${this.filepath} ---> ${this.htmlpath}`;

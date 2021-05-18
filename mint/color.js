@@ -11,33 +11,13 @@ function MintColor (app, json) {
 	this.name = json.name ? json.name : json.title.toLowerCase();
 }
 
+const MintBaseClass = require("./baseclass");
+MintColor.prototype = new MintBaseClass(MintColor);
 
 
-MintColor.prototype.getTitle = function () {
-	return this.title;
-}
-
-MintColor.prototype.getName = function () {
-	return this.name;
-}
-
-MintColor.prototype.getIndex = function () {
-	return this.index;
-}
-
-MintColor.prototype.getNIndex = function () {
-	return this.index + 1;
-}
 
 MintColor.prototype.getHexCode = function () {
 	return "#" + this.hex;
-}
-
-MintColor.prototype.getDescription = function () {
-	if (this.json.description) {
-		return this.json.description;
-	}
-	return "No description!";
 }
 
 MintColor.prototype.getPresentableS = function () {

@@ -10,30 +10,10 @@ function MintPalette (app, json) {
 	this.name = json.name ? json.name : json.title.toLowerCase();
 }
 
+const MintBaseClass = require("./baseclass");
+MintPalette.prototype = new MintBaseClass(MintPalette);
 
 
-MintPalette.prototype.getTitle = function () {
-	return this.title;
-}
-
-MintPalette.prototype.getName = function () {
-	return this.name;
-}
-
-MintPalette.prototype.getIndex = function () {
-	return this.index;
-}
-
-MintPalette.prototype.getNIndex = function () {
-	return this.index + 1;
-}
-
-MintPalette.prototype.getDescription = function () {
-	if (this.json.description) {
-		return this.json.description;
-	}
-	return "No description for palette!";
-}
 
 MintPalette.prototype.getPresentableS = function () {
 	return `${this.getTitle()} (${this.getName()})`;
