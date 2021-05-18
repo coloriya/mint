@@ -8,6 +8,8 @@
 		"output": "docs"
 	},
 
+	"analytics": "src/txt/analytics.html",
+
 	"meta": {
 		"app": {
 			"name": "ColorMint"
