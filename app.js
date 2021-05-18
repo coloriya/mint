@@ -27,6 +27,11 @@ switch (command) {
 	case "listdesigns":
 		mint.listDesigns();
 		break;
+	case "lsg":
+	case "pages":
+	case "listpages":
+		mint.listPages();
+		break;
 
 	case "cd":
 	case "colordetails":

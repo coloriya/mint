@@ -17,6 +17,7 @@ function MintApp () {
 	this.setupPalettes();
 	this.setupTemplates();
 	this.setupDesigns();
+	this.setupPages();
 }
 
 MintApp.prototype.setupColors = function () {
@@ -71,6 +72,17 @@ MintApp.prototype.setupDesigns = function () {
 	}
 }
 
+MintApp.prototype.setupPages = function () {
+	this.pagesJsonPath = path.join(this.paths.pages, "pages.json");
+	this.pages = [];
+
+	this.pagesJson = JSON.parse(fs.readFileSync(this.pagesJsonPath));
+	for (let pageJson of this.pagesJson.pages) {
+		let page = new MintPage(this, pageJson);
+		this.pages.push(page);
+	}
+}
+
 
 
 function getElement (arg, arr) {
@@ -122,6 +134,10 @@ MintApp.prototype.listTemplates = function () {
 
 MintApp.prototype.listDesigns = function () {
 	this.listElements("designs");
+}
+
+MintApp.prototype.listPages = function () {
+	this.listElements("pages");
 }
 
 

@@ -2,24 +2,24 @@
 	"pages": [
 		{
 			"title": "Home",
-			"path": "index",
+			"name": "index",
 			"out": "index.html"
 		},
 		{
 			"title": "About",
-			"path": "about"
+			"name": "about"
 		},
 		{
 			"title": "Terms",
-			"path": "terms"
+			"name": "terms"
 		},
 		{
 			"title": "Privacy",
-			"path": "privacy"
+			"name": "privacy"
 		},
 		{
 			"title": "404",
-			"path": "404",
+			"name": "404",
 			"out": "404.html"
 		}
 	]
