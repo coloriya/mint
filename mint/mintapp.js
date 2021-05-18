@@ -14,6 +14,7 @@ function MintApp () {
 	this.paths = this.preferences.paths;
 	this.setupColors();
 	this.setupPalettes();
+	this.setupTemplates();
 }
 
 MintApp.prototype.setupColors = function () {
@@ -42,6 +43,19 @@ MintApp.prototype.setupPalettes = function () {
 	}
 }
 
+MintApp.prototype.setupTemplates = function () {
+	this.templatesJsonPath = path.join(this.paths.templates, "templates.json");
+	this.templates = [];
+	this.templateObjects = {};
+
+	this.templatesJson = JSON.parse(fs.readFileSync(this.templatesJsonPath));
+	for (let templateJson of this.templatesJson.templates) {
+		let template = new MintTemplate(this, templateJson);
+		this.templates.push(template);
+		this.templateObjects[template.getName()] = template;
+	}
+}
+
 
 
 MintApp.prototype.getColor = function (arg) {
@@ -57,6 +71,15 @@ MintApp.prototype.getPalette = function (arg) {
 	for (let palette of this.palettes) {
 		if (palette.getName() == arg) {
 			return palette;
+		}
+	}
+	return null;
+}
+
+MintApp.prototype.getTemplate = function (arg) {
+	for (let template of this.templates) {
+		if (template.getName() == arg) {
+			return template;
 		}
 	}
 	return null;
@@ -78,6 +101,13 @@ MintApp.prototype.listPalettes = function () {
 	}
 }
 
+MintApp.prototype.listTemplates = function () {
+	console.log(`=> Listing ${this.templates.length} templates:`);
+	for (let template of this.templates) {
+		console.log(`\t${template.getNIndex()}. ${template.getPresentableS()}`);
+	}
+}
+
 
 
 MintApp.prototype.colorDetails = function (arg) {
@@ -95,6 +125,15 @@ MintApp.prototype.paletteDetails = function (arg) {
 		palette.printDetails();
 	} else {
 		console.log(`Palette not found: '${arg}'`);
+	}
+}
+
+MintApp.prototype.templateDetails = function (arg) {
+	let template = this.getTemplate(arg);
+	if (template) {
+		template.printDetails();
+	} else {
+		console.log(`Template not found: '${arg}'`);
 	}
 }
 

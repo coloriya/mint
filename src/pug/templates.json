@@ -1,0 +1,16 @@
+{
+	"templates": [
+		{
+			"name": "homepage"
+		},
+		{
+			"name": "page"
+		},
+		{
+			"name": "color"
+		},
+		{
+			"name": "palette"
+		}
+	]
+}
