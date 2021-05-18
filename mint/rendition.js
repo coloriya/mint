@@ -19,7 +19,7 @@ MintRendition.prototype = new MintBaseClass(MintRendition);
 
 MintRendition.prototype.getInputPugPath = function () {
 	if (!this.inputPugPath) {
-		this.inputPugPath = "none";
+		this.inputPugPath = this.design.getInputPugPath();
 	}
 	return this.inputPugPath;
 }
