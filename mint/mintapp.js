@@ -73,40 +73,29 @@ MintApp.prototype.setupDesigns = function () {
 
 
 
-MintApp.prototype.getColor = function (arg) {
-	for (let color of this.colors) {
-		if (color.getName() == arg) {
-			return color;
+function getElement (arg, arr) {
+	for (let element of arr) {
+		if (element.getName() == arg) {
+			return element;
 		}
 	}
 	return null;
+}
+
+MintApp.prototype.getColor = function (arg) {
+	return getElement(arg, this.colors);
 }
 
 MintApp.prototype.getPalette = function (arg) {
-	for (let palette of this.palettes) {
-		if (palette.getName() == arg) {
-			return palette;
-		}
-	}
-	return null;
+	return getElement(arg, this.palettes);
 }
 
 MintApp.prototype.getTemplate = function (arg) {
-	for (let template of this.templates) {
-		if (template.getName() == arg) {
-			return template;
-		}
-	}
-	return null;
+	return getElement(arg, this.templates);
 }
 
 MintApp.prototype.getDesign = function (arg) {
-	for (let design of this.designs) {
-		if (design.getName() == arg) {
-			return design;
-		}
-	}
-	return null;
+	return getElement(arg, this.designs);
 }
 
 
