@@ -22,7 +22,7 @@ MintDesign.prototype = new MintBaseClass(MintDesign);
 
 MintDesign.prototype.getInputPugPath = function () {
 	if (!this.inputPugPath) {
-		this.inputPugPath = path.join(this.app.paths.designs, this.path);
+		this.inputPugPath = path.join(this.app.paths.designs, this.getName(), this.path);
 	}
 	return this.inputPugPath;
 }
