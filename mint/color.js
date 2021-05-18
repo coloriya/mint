@@ -4,9 +4,11 @@
 function MintColor (app, json) {
 	this.app = app;
 	this.json = json;
+	this.index = app.colors.length;
+
 	this.hex = json.hex;
-	this.name = json.name;
 	this.title = json.title;
+	this.name = json.name ? json.name : json.title.toLowerCase();
 }
 
 
@@ -17,6 +19,14 @@ MintColor.prototype.getTitle = function () {
 
 MintColor.prototype.getName = function () {
 	return this.name;
+}
+
+MintColor.prototype.getIndex = function () {
+	return this.index;
+}
+
+MintColor.prototype.getNIndex = function () {
+	return this.index + 1;
 }
 
 MintColor.prototype.getHexCode = function () {
