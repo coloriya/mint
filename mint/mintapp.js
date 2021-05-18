@@ -13,10 +13,10 @@ const MintDesign = require("./design");
 function MintApp () {
 	this.preferences = JSON.parse(fs.readFileSync("preferences.json"));
 	this.paths = this.preferences.paths;
+	this.setupDesigns();
 	this.setupColors();
 	this.setupPalettes();
 	this.setupTemplates();
-	this.setupDesigns();
 	this.setupPages();
 }
 

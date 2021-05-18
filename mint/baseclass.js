@@ -34,7 +34,7 @@ MintBaseClass.prototype.getDescription = function () {
 
 
 MintBaseClass.prototype.getPresentableS = function () {
-	return `${this.getInputPugPath()} ---> ${this.getOutputHtmlPath()}`;
+	return `${this.classname} (${this.getInputPugPath()}) ---> (${this.getOutputHtmlPath()})`;
 }
 
 

@@ -2,6 +2,9 @@
 const fs = require("fs");
 const path = require("path");
 
+const mintutils = require("./utils");
+const MintRendition = require("./rendition");
+
 
 
 function MintPalette (app, json) {
@@ -12,12 +15,21 @@ function MintPalette (app, json) {
 	this.title = json.title;
 	this.name = json.name;
 	this.filename = this.name + ".pug";
+	this.setupRenditions();
 }
 
 const MintBaseClass = require("./baseclass");
 MintPalette.prototype = new MintBaseClass(MintPalette);
 
 
+
+MintPalette.prototype.setupRenditions = function () {
+	this.renditions = [];
+	for (let design of this.app.designs) {
+		let rendition = new MintRendition(this, design);
+		this.renditions.push(rendition);
+	}
+}
 
 MintPalette.prototype.getInputPugPath = function () {
 	if (!this.inputPugPath) {
