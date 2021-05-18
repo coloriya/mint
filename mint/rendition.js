@@ -7,6 +7,7 @@ const mintutils = require("./utils");
 
 
 function MintRendition (palette, design) {
+	this.app = palette.app;
 	this.palette = palette;
 	this.design = design;
 	this.index = palette.renditions.length;
@@ -26,7 +27,7 @@ MintRendition.prototype.getInputPugPath = function () {
 
 MintRendition.prototype.getOutputHtmlPath = function () {
 	if (!this.outputHtmlPath) {
-		this.outputHtmlPath = path.join(this.palette.app.paths.output, "palette",
+		this.outputHtmlPath = path.join(this.app.paths.output, "palette",
 			this.palette.getName(), this.design.getName(), "index.html");
 	}
 	return this.outputHtmlPath;
