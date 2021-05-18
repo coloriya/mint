@@ -2,6 +2,7 @@
 const fs = require("fs");
 const path = require("path");
 
+const mintutils = require("./utils");
 const MintColor = require("./color");
 const MintPalette = require("./palette");
 const MintPage = require("./page");
@@ -85,29 +86,20 @@ MintApp.prototype.setupPages = function () {
 
 
 
-function getElement (arg, arr) {
-	for (let element of arr) {
-		if (element.getName() == arg) {
-			return element;
-		}
-	}
-	return null;
-}
-
 MintApp.prototype.getColor = function (arg) {
-	return getElement(arg, this.colors);
+	return mintutils.getElement(arg, this.colors);
 }
 
 MintApp.prototype.getPalette = function (arg) {
-	return getElement(arg, this.palettes);
+	return mintutils.getElement(arg, this.palettes);
 }
 
 MintApp.prototype.getTemplate = function (arg) {
-	return getElement(arg, this.templates);
+	return mintutils.getElement(arg, this.templates);
 }
 
 MintApp.prototype.getDesign = function (arg) {
-	return getElement(arg, this.designs);
+	return mintutils.getElement(arg, this.designs);
 }
 
 
