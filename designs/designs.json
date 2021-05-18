@@ -1,9 +1,11 @@
 {
 	"designs": [
 		{
+			"title": "Dashboard",
 			"name": "dashboard"
 		},
 		{
+			"title": "Login page",
 			"name": "login"
 		}
 	]
