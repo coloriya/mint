@@ -1,5 +1,6 @@
 {
 	"paths": {
+		"designs": "designs",
 		"pages": "pages",
 		"templates": "src/pug",
 		"colors": "colors",

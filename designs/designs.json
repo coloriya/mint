@@ -1,0 +1,10 @@
+{
+	"designs": [
+		{
+			"name": "dashboard"
+		},
+		{
+			"name": "login"
+		}
+	]
+}

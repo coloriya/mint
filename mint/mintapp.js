@@ -6,6 +6,7 @@ const MintColor = require("./color");
 const MintPalette = require("./palette");
 const MintPage = require("./page");
 const MintTemplate = require("./template");
+const MintDesign = require("./design");
 
 
 
