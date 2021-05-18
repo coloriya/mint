@@ -67,14 +67,14 @@ MintApp.prototype.getPalette = function (arg) {
 MintApp.prototype.listColors = function () {
 	console.log(`=> Listing ${this.colors.length} colors:`);
 	for (let color of this.colors) {
-		console.log(`\t${color.getNIndex()}. ${color.getTitle()} (${color.getName()})`);
+		console.log(`\t${color.getNIndex()}. ${color.getPresentableS()}`);
 	}
 }
 
 MintApp.prototype.listPalettes = function () {
 	console.log(`=> Listing ${this.palettes.length} palettes:`);
 	for (let palette of this.palettes) {
-		console.log(`\t${palette.getNIndex()}. ${palette.getTitle()} (${palette.getName()})`);
+		console.log(`\t${palette.getNIndex()}. ${palette.getPresentableS()}`);
 	}
 }
 

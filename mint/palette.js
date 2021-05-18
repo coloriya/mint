@@ -35,6 +35,10 @@ MintPalette.prototype.getDescription = function () {
 	return "No description for palette!";
 }
 
+MintPalette.prototype.getPresentableS = function () {
+	return `${this.getTitle()} (${this.getName()})`;
+}
+
 
 
 MintPalette.prototype.printDetails = function () {

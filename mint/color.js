@@ -40,6 +40,10 @@ MintColor.prototype.getDescription = function () {
 	return "No description!";
 }
 
+MintColor.prototype.getPresentableS = function () {
+	return `${this.getTitle()} (${this.getName()}) #${this.getHexCode()}`;
+}
+
 
 
 MintColor.prototype.printDetails = function () {
