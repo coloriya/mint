@@ -8,18 +8,22 @@ const arg = args[3] ? args[3] : null;
 
 switch (command) {
 	case "lsc":
+	case "colors":
 	case "listcolors":
 		mint.listColors();
 		break;
 	case "lsp":
+	case "palettes":
 	case "listpalettes":
 		mint.listPalettes();
 		break;
 	case "lst":
+	case "templates":
 	case "listtemplates":
 		mint.listTemplates();
 		break;
 	case "lsd":
+	case "designs":
 	case "listdesigns":
 		mint.listDesigns();
 		break;
