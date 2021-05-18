@@ -16,6 +16,7 @@ function MintApp () {
 	this.setupColors();
 	this.setupPalettes();
 	this.setupTemplates();
+	this.setupDesigns();
 }
 
 MintApp.prototype.setupColors = function () {
@@ -57,6 +58,19 @@ MintApp.prototype.setupTemplates = function () {
 	}
 }
 
+MintApp.prototype.setupDesigns = function () {
+	this.designsJsonPath = path.join(this.paths.designs, "designs.json");
+	this.designs = [];
+	this.designObjects = {};
+
+	this.designsJson = JSON.parse(fs.readFileSync(this.designsJsonPath));
+	for (let designJson of this.designsJson.designs) {
+		let design = new MintDesign(this, designJson);
+		this.designs.push(design);
+		this.designObjects[design.getName()] = design;
+	}
+}
+
 
 
 MintApp.prototype.getColor = function (arg) {
@@ -86,6 +100,15 @@ MintApp.prototype.getTemplate = function (arg) {
 	return null;
 }
 
+MintApp.prototype.getDesign = function (arg) {
+	for (let design of this.designs) {
+		if (design.getName() == arg) {
+			return design;
+		}
+	}
+	return null;
+}
+
 
 
 MintApp.prototype.listColors = function () {
@@ -106,6 +129,13 @@ MintApp.prototype.listTemplates = function () {
 	console.log(`=> Listing ${this.templates.length} templates:`);
 	for (let template of this.templates) {
 		console.log(`\t${template.getNIndex()}. ${template.getPresentableS()}`);
+	}
+}
+
+MintApp.prototype.listDesigns = function () {
+	console.log(`=> Listing ${this.designs.length} designs:`);
+	for (let design of this.designs) {
+		console.log(`\t${design.getNIndex()}. ${design.getPresentableS()}`);
 	}
 }
 
@@ -135,6 +165,15 @@ MintApp.prototype.templateDetails = function (arg) {
 		template.printDetails();
 	} else {
 		console.log(`Template not found: '${arg}'`);
+	}
+}
+
+MintApp.prototype.designDetails = function (arg) {
+	let design = this.getDesign(arg);
+	if (design) {
+		design.printDetails();
+	} else {
+		console.log(`Design not found: '${arg}'`);
 	}
 }
 

@@ -19,6 +19,10 @@ switch (command) {
 	case "listtemplates":
 		mint.listTemplates();
 		break;
+	case "ld":
+	case "listdesigns":
+		mint.listDesigns();
+		break;
 
 	case "cd":
 	case "colordetails":
@@ -31,6 +35,10 @@ switch (command) {
 	case "td":
 	case "templatedetails":
 		mint.templateDetails(arg);
+		break;
+	case "dd":
+	case "designdetails":
+		mint.designDetails(arg);
 		break;
 
 	case "hw":
