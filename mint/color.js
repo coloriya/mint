@@ -46,10 +46,20 @@ MintColor.prototype.getPresentableS = function () {
 
 
 
+MintColor.prototype.getFgClassName = function () {
+	return "fg-" + this.name;
+}
+
+MintColor.prototype.getBgClassName = function () {
+	return "bg-" + this.name;
+}
+
+
+
 MintColor.prototype.getSCSSText = function () {
 	let scssText = "";
-	scssText += `.fg-${this.getName()} { color: ${this.getHexCode()}; }\n`;
-	scssText += `.bg-${this.getName()} { background-color: ${this.getHexCode()}; }\n`;
+	scssText += `.${this.getFgClassName()} { color: ${this.getHexCode()}; }\n`;
+	scssText += `.${this.getBgClassName()} { background-color: ${this.getHexCode()}; }\n`;
 	return scssText;
 }
 
