@@ -3,9 +3,10 @@ const MintApp = require("./mint");
 const mint = new MintApp();
 
 const args = process.argv;
-const first_arg = args[2] ? args[2].toLowerCase() : null;
+const command = args[2] ? args[2].toLowerCase() : null;
+const arg = args[3] ? args[3] : null;
 
-switch (first_arg) {
+switch (command) {
 	case "lc":
 	case "listcolors":
 		mint.listColors();
@@ -14,6 +15,16 @@ switch (first_arg) {
 	case "listpalettes":
 		mint.listPalettes();
 		break;
+
+	case "cd":
+	case "colordetails":
+		mint.colorDetails(arg);
+		break;
+	case "pd":
+	case "palettedetails":
+		mint.paletteDetails(arg);
+		break;
+
 	case "hw":
 	case "helloworld":
 		mint.helloWorld();

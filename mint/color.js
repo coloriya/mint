@@ -42,4 +42,10 @@ MintColor.prototype.getDescription = function () {
 
 
 
+MintColor.prototype.printDetails = function () {
+	//
+}
+
+
+
 module.exports = MintColor;

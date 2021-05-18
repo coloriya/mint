@@ -44,6 +44,26 @@ MintApp.prototype.setupPalettes = function () {
 
 
 
+MintApp.prototype.getColor = function (arg) {
+	for (let color of this.colors) {
+		if (color.getName() == arg) {
+			return color;
+		}
+	}
+	return null;
+}
+
+MintApp.prototype.getPalette = function (arg) {
+	for (let palette of this.palettes) {
+		if (palette.getName() == arg) {
+			return palette;
+		}
+	}
+	return null;
+}
+
+
+
 MintApp.prototype.listColors = function () {
 	console.log(`=> Listing ${this.colors.length} colors:`);
 	for (let color of this.colors) {
@@ -57,6 +77,28 @@ MintApp.prototype.listPalettes = function () {
 		console.log(`\t${palette.getNIndex()}. ${palette.getTitle()} (${palette.getName()})`);
 	}
 }
+
+
+
+MintApp.prototype.colorDetails = function (arg) {
+	let color = this.getColor(arg);
+	if (color) {
+		color.printDetails();
+	} else {
+		console.log(`Color not found: '${arg}'`);
+	}
+}
+
+MintApp.prototype.paletteDetails = function (arg) {
+	let palette = this.getPalette(arg);
+	if (palette) {
+		palette.printDetails();
+	} else {
+		console.log(`Palette not found: '${arg}'`);
+	}
+}
+
+
 
 MintApp.prototype.helloWorld = function () {
 	// console.log("MintApp says hello.");

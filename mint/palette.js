@@ -37,4 +37,10 @@ MintPalette.prototype.getDescription = function () {
 
 
 
+MintPalette.prototype.printDetails = function () {
+	//
+}
+
+
+
 module.exports = MintPalette;
