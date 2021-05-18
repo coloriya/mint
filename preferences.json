@@ -1,9 +1,10 @@
 {
 	"paths": {
+		"colors": "colors",
 		"designs": "designs",
+		"gen": "gen",
 		"pages": "pages",
 		"templates": "src/pug",
-		"colors": "colors",
 		"output": "docs"
 	},
 

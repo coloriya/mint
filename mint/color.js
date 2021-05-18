@@ -30,7 +30,7 @@ MintColor.prototype.getNIndex = function () {
 }
 
 MintColor.prototype.getHexCode = function () {
-	return this.hex;
+	return "#" + this.hex;
 }
 
 MintColor.prototype.getDescription = function () {
@@ -41,7 +41,16 @@ MintColor.prototype.getDescription = function () {
 }
 
 MintColor.prototype.getPresentableS = function () {
-	return `${this.getTitle()} (${this.getName()}) #${this.getHexCode()}`;
+	return `${this.getTitle()} (${this.getName()}) ${this.getHexCode()}`;
+}
+
+
+
+MintColor.prototype.getSCSSText = function () {
+	let scssText = "";
+	scssText += `.fg-${this.getName()} { color: ${this.getHexCode()}; }\n`;
+	scssText += `.bg-${this.getName()} { background-color: ${this.getHexCode()}; }\n`;
+	return scssText;
 }
 
 

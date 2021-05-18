@@ -164,6 +164,19 @@ MintApp.prototype.designDetails = function (arg) {
 
 
 
+MintApp.prototype.generateSCSS = function () {
+	let filepath = path.join(this.paths.gen, "colors.scss");
+	let scssText = "";
+	for (let color of this.colors) {
+		scssText += color.getSCSSText();
+	}
+
+	fs.writeFileSync(filepath, scssText);
+	console.log(`Saved: (${filepath})`);
+}
+
+
+
 MintApp.prototype.helloWorld = function () {
 	// console.log("MintApp says hello.");
 	console.log(`=> MintApp setup complete:`);

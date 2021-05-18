@@ -41,6 +41,11 @@ switch (command) {
 		mint.designDetails(arg);
 		break;
 
+	case "genscss":
+	case "generatescss":
+		mint.generateSCSS();
+		break;
+
 	case "hw":
 	case "helloworld":
 		mint.helloWorld();
