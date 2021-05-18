@@ -100,32 +100,28 @@ MintApp.prototype.getDesign = function (arg) {
 
 
 
-MintApp.prototype.listColors = function () {
-	console.log(`=> Listing ${this.colors.length} colors:`);
-	for (let color of this.colors) {
-		console.log(`\t${color.getNIndex()}. ${color.getPresentableS()}`);
+MintApp.prototype.listElements = function (array_name) {
+	let arr = this[array_name];
+	console.log(`=> Listing ${arr.length} ${array_name}:`);
+	for (let element of arr) {
+		console.log(`\t${element.getNIndex()}. ${element.getPresentableS()}`);
 	}
+}
+
+MintApp.prototype.listColors = function () {
+	this.listElements("colors");
 }
 
 MintApp.prototype.listPalettes = function () {
-	console.log(`=> Listing ${this.palettes.length} palettes:`);
-	for (let palette of this.palettes) {
-		console.log(`\t${palette.getNIndex()}. ${palette.getPresentableS()}`);
-	}
+	this.listElements("palettes");
 }
 
 MintApp.prototype.listTemplates = function () {
-	console.log(`=> Listing ${this.templates.length} templates:`);
-	for (let template of this.templates) {
-		console.log(`\t${template.getNIndex()}. ${template.getPresentableS()}`);
-	}
+	this.listElements("templates");
 }
 
 MintApp.prototype.listDesigns = function () {
-	console.log(`=> Listing ${this.designs.length} designs:`);
-	for (let design of this.designs) {
-		console.log(`\t${design.getNIndex()}. ${design.getPresentableS()}`);
-	}
+	this.listElements("designs");
 }
 
 
