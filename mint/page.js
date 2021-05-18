@@ -2,6 +2,8 @@
 const fs = require("fs");
 const path = require("path");
 
+const mintutils = require("./utils");
+
 
 
 function MintPage (app, json) {
@@ -10,7 +12,7 @@ function MintPage (app, json) {
 	this.index = app.pages.length;
 
 	this.title = json.title;
-	this.name = json.name;
+	this.name = mintutils.sanitizeName(json.name);
 
 	this.filename = json.name + ".pug";
 	this.filepath = path.join(this.app.paths.pages, this.filename);
