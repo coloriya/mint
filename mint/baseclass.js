@@ -37,6 +37,13 @@ MintBaseClass.prototype.getPresentableS = function () {
 	return `${this.classname} (${this.getInputPugPath()}) ---> (${this.getOutputHtmlPath()})`;
 }
 
+MintBaseClass.prototype.printDetails = function () {
+	console.log(`${this.classname} {}`);
+	console.log(this.json);
+	console.log(`\t  in: (${this.getInputPugPath()})`);
+	console.log(`\t out: (${this.getOutputHtmlPath()})`);
+}
+
 
 
 module.exports = MintBaseClass;
