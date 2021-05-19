@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset='utf-8')
+		meta(name="description" itemprop="description" content="Page description")
+
+		title= page.getPageTitle()
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+
+		if base_depth == 1
+			base(href="../")
+		else if base_depth == 2
+			base(href="../../")
+		else
+			base(href="")
+
+		link(rel="stylesheet", href="dist/css/mint.css")
+
+		// analytics
+
+	body
+		header.mint-header
+		content.mint-content
+		footer.mint-footer
+
+
