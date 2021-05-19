@@ -109,6 +109,13 @@ MintApp.prototype.getPage = function (arg) {
 
 
 
+MintApp.prototype.getGAText = function () {
+	let text = fs.readFileSync(this.preferences.analytics);
+	return text;
+}
+
+
+
 MintApp.prototype.listElements = function (array_name) {
 	let arr = this[array_name];
 	console.log(`=> Listing ${arr.length} ${array_name}:`);
