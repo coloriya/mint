@@ -55,6 +55,10 @@ MintPalette.prototype.printDetails = function () {
 
 
 
+MintPalette.prototype.getPageTitle = function () {
+	return `${this.app.meta.app.prefix} | ${this.getTitle()} | palette`;
+}
+
 MintPalette.prototype.getPugProps = function () {
 	return {
 		app: this.app,

@@ -52,6 +52,10 @@ MintDesign.prototype.printDetails = function () {
 
 
 
+MintDesign.prototype.getPageTitle = function () {
+	return `${this.app.meta.app.prefix} | ${this.getTitle()} | design`;
+}
+
 MintDesign.prototype.getPugProps = function () {
 	return {
 		app: this.app,

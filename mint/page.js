@@ -42,6 +42,10 @@ MintPage.prototype.getOutputHtmlPath = function () {
 
 
 
+MintPage.prototype.getPageTitle = function () {
+	return `${this.app.meta.app.prefix} | ${this.getTitle()}`;
+}
+
 MintPage.prototype.getPugProps = function () {
 	return {
 		app: this.app,

@@ -12,6 +12,7 @@
 
 	"meta": {
 		"app": {
+			"prefix": "mint",
 			"name": "ColorMint"
 		},
 		"author": {

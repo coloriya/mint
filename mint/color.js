@@ -64,6 +64,10 @@ MintColor.prototype.getTemplate = function () {
 
 
 
+MintColor.prototype.getPageTitle = function () {
+	return `${this.app.meta.app.prefix} | ${this.getTitle()} | color`;
+}
+
 MintColor.prototype.getFgClassName = function () {
 	return "fg-" + this.name;
 }

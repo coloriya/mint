@@ -14,6 +14,7 @@ const MintDesign = require("./design");
 function MintApp () {
 	this.preferences = JSON.parse(fs.readFileSync("preferences.json"));
 	this.paths = this.preferences.paths;
+	this.meta = this.preferences.meta;
 	this.setupDesigns();
 	this.setupColors();
 	this.setupPalettes();
