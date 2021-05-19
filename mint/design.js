@@ -52,4 +52,22 @@ MintDesign.prototype.printDetails = function () {
 
 
 
+MintDesign.prototype.getPugProps = function () {
+	return {
+		app: this.app,
+		json: this.json,
+		design: this,
+		page: this
+	};
+}
+
+MintDesign.prototype.getTemplate = function () {
+	if (!this.template) {
+		this.template = this.app.getTemplate("design");
+	}
+	return this.template;
+}
+
+
+
 module.exports = MintDesign;

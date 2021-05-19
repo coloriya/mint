@@ -55,4 +55,22 @@ MintPalette.prototype.printDetails = function () {
 
 
 
+MintPalette.prototype.getPugProps = function () {
+	return {
+		app: this.app,
+		json: this.json,
+		palette: this,
+		page: this
+	};
+}
+
+MintPalette.prototype.getTemplate = function () {
+	if (!this.template) {
+		this.template = this.app.getTemplate("palette");
+	}
+	return this.template;
+}
+
+
+
 module.exports = MintPalette;

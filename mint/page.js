@@ -42,4 +42,21 @@ MintPage.prototype.getOutputHtmlPath = function () {
 
 
 
+MintPage.prototype.getPugProps = function () {
+	return {
+		app: this.app,
+		json: this.json,
+		page: this
+	};
+}
+
+MintPage.prototype.getTemplate = function () {
+	if (!this.template) {
+		this.template = this.app.getTemplate("page");
+	}
+	return this.template;
+}
+
+
+
 module.exports = MintPage;
