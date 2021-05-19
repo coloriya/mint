@@ -35,6 +35,15 @@ MintTemplate.prototype.getPresentableS = function () {
 
 
 
+MintTemplate.prototype.getFunc = function () {
+	if (!this.func) {
+		this.func = pug.compileFile(this.fullPath);
+	}
+	return this.func;
+}
+
+
+
 MintTemplate.prototype.printDetails = function () {
 	//
 }

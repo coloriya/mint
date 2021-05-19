@@ -1,4 +1,7 @@
 
+const fs = require("fs");
+const path = require("path");
+
 
 
 function MintBaseClass (mintClass) {
@@ -9,6 +12,10 @@ function MintBaseClass (mintClass) {
 
 
 MintBaseClass.prototype.getTitle = function () {
+	return this.title;
+}
+
+MintBaseClass.prototype.getPageTitle = function () {
 	return this.title;
 }
 
@@ -42,6 +49,33 @@ MintBaseClass.prototype.printDetails = function () {
 	console.log(this.json);
 	console.log(`\t  in: (${this.getInputPugPath()})`);
 	console.log(`\t out: (${this.getOutputHtmlPath()})`);
+}
+
+
+
+MintBaseClass.prototype.needsUpdate = function () {
+	return true;
+}
+
+MintBaseClass.prototype.render = function () {
+	if (this.needsUpdate()) {
+		this.forcedRender();
+	}
+}
+
+MintBaseClass.prototype.forcedRender = function () {
+	let htmlPath = this.getOutputHtmlPath();
+	let dirPath = path.dirname(htmlPath);
+	let template = this.getTemplate();
+	let func = template.getFunc();
+	let props = this.getPugProps();
+
+	if (!fs.existsSync(dirPath)) {
+		fs.mkdirSync(dirPath, {
+			recursive: true
+		});
+	}
+	fs.writeFileSync(htmlPath, func(props));
 }
 
 

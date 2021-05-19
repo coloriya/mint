@@ -46,6 +46,24 @@ MintColor.prototype.getPresentableS = function () {
 
 
 
+MintColor.prototype.getPugProps = function () {
+	return {
+		app: this.app,
+		json: this.json,
+		color: this,
+		page: this
+	};
+}
+
+MintColor.prototype.getTemplate = function () {
+	if (!this.template) {
+		this.template = this.app.getTemplate("color");
+	}
+	return this.template;
+}
+
+
+
 MintColor.prototype.getFgClassName = function () {
 	return "fg-" + this.name;
 }

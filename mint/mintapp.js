@@ -146,6 +146,44 @@ MintApp.prototype.listAll = function () {
 
 
 
+MintApp.prototype.renderElements = function (array_name) {
+	let arr = this[array_name];
+	console.log(`=> Rendering ${arr.length} ${array_name}:`);
+	for (let element of arr) {
+		console.log(`\t${element.getNIndex()}. Rendering: (${element.getOutputHtmlPath()})`);
+		element.render();
+	}
+}
+
+MintApp.prototype.renderColors = function () {
+	this.renderElements("colors");
+}
+
+MintApp.prototype.renderPalettes = function () {
+	this.renderElements("palettes");
+}
+
+MintApp.prototype.renderDesigns = function () {
+	this.renderElements("designs");
+}
+
+MintApp.prototype.renderPages = function () {
+	this.renderElements("pages");
+}
+
+MintApp.prototype.renderAll = function () {
+	this.renderColors();
+	this.renderPalettes();
+	this.renderDesigns();
+	this.renderPages();
+}
+
+MintApp.prototype.renderColors = function () {
+	this.renderElements("colors");
+}
+
+
+
 MintApp.prototype.colorDetails = function (arg) {
 	let color = this.getColor(arg);
 	if (color) {
