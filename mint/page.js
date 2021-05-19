@@ -50,6 +50,7 @@ MintPage.prototype.getPugProps = function () {
 	return {
 		app: this.app,
 		json: this.json,
+		base_depth: (this.json.out) ? 0 : 1,
 		page: this
 	};
 }

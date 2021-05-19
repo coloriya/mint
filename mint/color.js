@@ -51,6 +51,7 @@ MintColor.prototype.getPugProps = function () {
 		app: this.app,
 		json: this.json,
 		color: this,
+		base_depth: 2,
 		page: this
 	};
 }

@@ -64,6 +64,7 @@ MintPalette.prototype.getPugProps = function () {
 		app: this.app,
 		json: this.json,
 		palette: this,
+		base_depth: 2,
 		page: this
 	};
 }

@@ -61,6 +61,7 @@ MintDesign.prototype.getPugProps = function () {
 		app: this.app,
 		json: this.json,
 		design: this,
+		base_depth: 2,
 		page: this
 	};
 }
