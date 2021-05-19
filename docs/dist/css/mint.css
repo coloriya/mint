@@ -177,3 +177,67 @@ template {
 [hidden] {
   display: none;
 }
+
+.fg-white {
+  color: #ffffff;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.fg-black {
+  color: #000000;
+}
+
+.bg-black {
+  background-color: #000000;
+}
+
+.fg-red {
+  color: #ff0000;
+}
+
+.bg-red {
+  background-color: #ff0000;
+}
+
+.fg-green {
+  color: #00ff00;
+}
+
+.bg-green {
+  background-color: #00ff00;
+}
+
+.fg-blue {
+  color: #0000ff;
+}
+
+.bg-blue {
+  background-color: #0000ff;
+}
+
+.fg-cyan {
+  color: #00ffff;
+}
+
+.bg-cyan {
+  background-color: #00ffff;
+}
+
+.fg-fuchsia {
+  color: #ff00ff;
+}
+
+.bg-fuchsia {
+  background-color: #ff00ff;
+}
+
+.fg-yellow {
+  color: #ffff00;
+}
+
+.bg-yellow {
+  background-color: #ffff00;
+}
