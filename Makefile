@@ -4,7 +4,7 @@ default: all
 all: css
 
 CSS_IN = src/scss/mint.scss
-CSS_OUT = out/dist/css/mint.css
+CSS_OUT = docs/dist/css/mint.css
 
 SASS_FLAGS = --no-source-map --style=compressed
 
