@@ -5,49 +5,68 @@ const mint = new MintApp();
 const args = process.argv;
 const command = args[2] ? args[2].toLowerCase() : null;
 const arg = args[3] ? args[3] : null;
+const subarg = args[4] ? args[4] : null;
 
 switch (command) {
-	case "lsc":
-	case "colors":
-	case "listcolors":
-		mint.listColors();
-		break;
-	case "lsp":
-	case "palettes":
-	case "listpalettes":
-		mint.listPalettes();
-		break;
-	case "lst":
-	case "templates":
-	case "listtemplates":
-		mint.listTemplates();
-		break;
-	case "lsd":
-	case "designs":
-	case "listdesigns":
-		mint.listDesigns();
-		break;
-	case "lsg":
-	case "pages":
-	case "listpages":
-		mint.listPages();
+	case "ls":
+	case "list":
+		switch (arg) {
+			case "colors":
+				mint.listColors();
+				break;
+			case "palettes":
+				mint.listPalettes();
+				break;
+			case "templates":
+				mint.listTemplates();
+				break;
+			case "designs":
+				mint.listDesigns();
+				break;
+			case "pages":
+				mint.listPages();
+				break;
+			default:
+				console.log("Default list.");
+		}
 		break;
 
-	case "cd":
-	case "colordetails":
-		mint.colorDetails(arg);
+	case "render":
+		switch (arg) {
+			case "colors":
+				mint.renderColors();
+				break;
+			case "palettes":
+				mint.renderPalettes();
+				break;
+			case "designs":
+				mint.renderDesigns();
+				break;
+			case "pages":
+				mint.renderPages();
+				break;
+			default:
+				console.log("Default render.");
+		}
 		break;
-	case "pd":
-	case "palettedetails":
-		mint.paletteDetails(arg);
-		break;
-	case "td":
-	case "templatedetails":
-		mint.templateDetails(arg);
-		break;
-	case "dd":
-	case "designdetails":
-		mint.designDetails(arg);
+
+	case "detail":
+		switch (arg) {
+			case "color":
+				mint.colorDetails(subarg);
+				break;
+			case "palette":
+				mint.paletteDetails(subarg);
+				break;
+			case "template":
+				mint.templateDetails(subarg);
+				break;
+			case "design":
+				mint.designDetails(subarg);
+				break;
+			default:
+				//
+		}
 		break;
 
 	case "genscss":
