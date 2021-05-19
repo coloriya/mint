@@ -16,6 +16,7 @@ switch (command) {
 			case "templates": mint.listTemplates(); break;
 			case "designs": mint.listDesigns(); break;
 			case "pages": mint.listPages(); break;
+			case "all": mint.listAll(); break;
 			default: console.log("Default list.");
 		}
 		break;
@@ -26,6 +27,7 @@ switch (command) {
 			case "palettes": mint.renderPalettes(); break;
 			case "designs": mint.renderDesigns(); break;
 			case "pages": mint.renderPages(); break;
+			case "all": mint.renderAll(); break;
 			default: console.log("Default render.");
 		}
 		break;
@@ -36,6 +38,7 @@ switch (command) {
 			case "palette": mint.paletteDetails(subarg); break;
 			case "template": mint.templateDetails(subarg); break;
 			case "design": mint.designDetails(subarg); break;
+			case "page": mint.pageDetails(subarg); break;
 			default: console.log("Default detail.");
 		}
 		break;

@@ -102,6 +102,10 @@ MintApp.prototype.getDesign = function (arg) {
 	return mintutils.getElement(arg, this.designs);
 }
 
+MintApp.prototype.getPage = function (arg) {
+	return mintutils.getElement(arg, this.pages);
+}
+
 
 
 MintApp.prototype.listElements = function (array_name) {
@@ -130,6 +134,14 @@ MintApp.prototype.listDesigns = function () {
 
 MintApp.prototype.listPages = function () {
 	this.listElements("pages");
+}
+
+MintApp.prototype.listAll = function () {
+	this.listColors();
+	this.listPalettes();
+	this.listTemplates();
+	this.listDesigns();
+	this.listPages();
 }
 
 
@@ -167,6 +179,15 @@ MintApp.prototype.designDetails = function (arg) {
 		design.printDetails();
 	} else {
 		console.log(`Design not found: '${arg}'`);
+	}
+}
+
+MintApp.prototype.pageDetails = function (arg) {
+	let page = this.getPage(arg);
+	if (page) {
+		page.printDetails();
+	} else {
+		console.log(`Page not found: '${arg}'`);
 	}
 }
 
